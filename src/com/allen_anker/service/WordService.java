@@ -3,11 +3,16 @@ package com.allen_anker.service;
 import com.allen_anker.dto.ImportWordDto;
 import com.allen_anker.dto.ImportWordResultDto;
 import org.apache.poi.hwpf.HWPFDocument;
+import org.apache.poi.hwpf.usermodel.Range;
 import org.apache.poi.xwpf.usermodel.XWPFDocument;
 import org.apache.poi.xwpf.usermodel.XWPFParagraph;
+import org.apache.poi.xwpf.usermodel.XWPFRun;
 
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public class WordService {
 
@@ -60,5 +65,45 @@ public class WordService {
             }
         }
         return result;
+    }
+
+    public HWPFDocument export03(Map<String, String> replacements) {
+
+        HWPFDocument doc = null;
+        try {
+            doc = new HWPFDocument(new FileInputStream("/Users/barryallen/Desktop/Development/" +
+                    "IDEA/WebImportExport/web/templates/template_03.doc"));
+            Range range = doc.getRange();
+            for (Map.Entry<String, String> entry : replacements.entrySet()) {
+                range.replaceText(entry.getKey(), entry.getValue());
+            }
+        } catch (Exception e) {
+            return null;
+        }
+
+        return doc;
+    }
+
+    public XWPFDocument export07(Map<String, String> replacements) {
+
+        XWPFDocument docx = null;
+        try {
+            docx = new XWPFDocument(new FileInputStream("/Users/barryallen/Desktop/Development/" +
+                    "IDEA/WebImportExport/web/templates/template_07.docx"));
+            List<XWPFParagraph> paragraphList = docx.getParagraphs();
+            for (XWPFParagraph paragraph : paragraphList) {
+                List<XWPFRun> runs = paragraph.getRuns();
+                for (XWPFRun run : runs) {
+                    String text = run.getText(run.getTextPosition());
+                    for (Map.Entry<String, String> entry : replacements.entrySet()) {
+                        text.replace(entry.getKey(), entry.getValue());
+                    }
+                    run.setText(text, 0);
+                }
+            }
+        } catch (Exception e) {
+            return null;
+        }
+        return docx;
     }
 }
