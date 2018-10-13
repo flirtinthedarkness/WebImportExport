@@ -23,6 +23,22 @@
         <servlet-name>ExportExcelServlet</servlet-name>
         <servlet-class>com.allen_anker.servlet.ExportExcelServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ExportWordInitServlet</servlet-name>
+        <servlet-class>com.allen_anker.servlet.ExportWordInitServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ExportWordServlet</servlet-name>
+        <servlet-class>com.allen_anker.servlet.ExportWordServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ImportWordInitServlet</servlet-name>
+        <servlet-class>com.allen_anker.servlet.ImportWordInitServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ImportWordServlet</servlet-name>
+        <servlet-class>com.allen_anker.servlet.ImportWordServlet</servlet-class>
+    </servlet>
 
     <servlet-mapping>
         <servlet-name>IndexServlet</servlet-name>
@@ -43,6 +59,22 @@
     <servlet-mapping>
         <servlet-name>ExportExcelServlet</servlet-name>
         <url-pattern>/exportExcel</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ExportWordInitServlet</servlet-name>
+        <url-pattern>/exportWordInit</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ExportWordServlet</servlet-name>
+        <url-pattern>/exportWord</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ImportWordInitServlet</servlet-name>
+        <url-pattern>/importWordInit</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ImportWordServlet</servlet-name>
+        <url-pattern>/importWord</url-pattern>
     </servlet-mapping>
 
     <jsp-config>
