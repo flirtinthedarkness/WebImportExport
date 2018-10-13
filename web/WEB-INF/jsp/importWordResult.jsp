@@ -9,6 +9,14 @@
 		<link rel="stylesheet" type="text/css" href="css/pop.css"/>
 		<link rel="stylesheet" type="text/css" href="css/main.css"/>
 	</head>
+	<script type="text/javascript">
+        function bodyInit() {
+            if ('${result.message}') {
+                alert('${result.message}')
+            }
+        }
+        bodyInit();
+	</script>
 	<body style="background: #e1e9eb;">
 		<form action="" id="mainForm" method="post">
 			<div class="right">
@@ -21,11 +29,11 @@
 						<tbody>
 							<tr>
 								<td align="right" width="80">标题：</td>
-								<td>Word文档</td>
+								<td>${result.title}</td>
 							</tr>
 							<tr>
 								<td align="right" width="80">内容：</td>
-								<td>这是Word文档内容</td>
+								<td>${result.content}</td>
 							</tr>
 						</tbody>
 					</table>

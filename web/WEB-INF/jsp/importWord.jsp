@@ -10,7 +10,7 @@
 		<link rel="stylesheet" type="text/css" href="css/main.css"/>
 	</head>
 	<body style="background: #e1e9eb;">
-		<form id="mainForm" method="post">
+		<form id="mainForm" method="post" action="${basePath}/importWord" enctype="multipart/form-data">
 			<div class="right">
 				<div class="current">当前位置：<a href="###">导入/导出</a> &gt; 导入Word</div>
 				<div class="rightCont">
@@ -29,7 +29,8 @@
 						</tr>
 					</tbody></table>
 					<div style="text-align: center; margin-top: 30px;">
-						<input class="tabSub" value="导     入" onclick="location.href='importWordResult.jsp'" type="button" />
+						<input class="tabSub" value="导     入" onclick="document.getElementById('mainForm').submit()"
+							   type="button" />
 					</div>
 				</div>
 			</div>
