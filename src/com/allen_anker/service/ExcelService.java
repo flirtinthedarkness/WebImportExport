@@ -31,7 +31,7 @@ public class ExcelService {
                 student.setTime(row.getCell(2).getDateCellValue());
                 students.add(student);
             }
-        } catch (IOException e) {
+        } catch (Exception e) {
             importExcelResultDto.setMessage("Parse Excel File Failed.");
             e.printStackTrace();
         } finally {

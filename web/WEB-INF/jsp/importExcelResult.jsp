@@ -10,6 +10,14 @@
 		<link rel="stylesheet" type="text/css" href="css/all.css"/>
 		<link rel="stylesheet" type="text/css" href="css/pop.css"/>
 		<link rel="stylesheet" type="text/css" href="css/main.css"/>
+		<script type="text/javascript">
+			function bodyInit() {
+				if ('${result.message}') {
+				    alert('${result.message}')
+                }
+            }
+            bodyInit();
+		</script>
 	</head>
 	<body style="background: #e1e9eb;">
 		<form action="" id="mainForm" method="post">
