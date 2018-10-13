@@ -10,7 +10,7 @@
 		<link rel="stylesheet" type="text/css" href="css/main.css"/>
 	</head>
 	<body style="background: #e1e9eb;">
-		<form id="mainForm" method="post" enctype="multipart/form-data" action="">
+		<form id="mainForm" method="post" enctype="multipart/form-data" action="${basePath}/importExcel">
 			<div class="right">
 				<div class="current">当前位置：<a href="###">导入/导出</a> &gt; 导入Excel</div>
 				<div class="rightCont">

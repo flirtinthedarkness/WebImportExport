@@ -11,6 +11,10 @@
         <servlet-name>ImportExcelInitServlet</servlet-name>
         <servlet-class>com.allen_anker.servlet.ImportExcelInitServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ImportExcelServlet</servlet-name>
+        <servlet-class>com.allen_anker.servlet.ImportExcelServlet</servlet-class>
+    </servlet>
 
     <servlet-mapping>
         <servlet-name>IndexServlet</servlet-name>
@@ -19,6 +23,10 @@
     <servlet-mapping>
         <servlet-name>ImportExcelInitServlet</servlet-name>
         <url-pattern>/importExcelInit</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ImportExcelServlet</servlet-name>
+        <url-pattern>/importExcel</url-pattern>
     </servlet-mapping>
 
     <jsp-config>
